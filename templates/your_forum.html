@@ -1,0 +1,53 @@
+{% extends "master.html" %}
+
+{% block body %}
+
+{% if 'forum' in session == 0: %}
+    <h2>Please take the survey first then come back.</h2>
+{% else: %}
+<leftside>
+<p>
+<form action="{{ url_for('your_forum') }}" method=post>
+  <fieldset>
+    <h3>Post your thoughts: </h3>
+    <p> <textarea name="message" rows="20" cols="50"></textarea></p>
+  <br><br>
+
+ <button type="submit">Submit</button>
+ </fieldset>
+</form>
+</p>
+</leftside>
+<rightside>
+
+{% if 'forum' in session == 1: %}
+    <h2>Thoughts from the other Freshmen.</h2>
+{% elif 'forum' in session == 2: %}
+    <h2>Thoughts from the other Sophomores.</h2>
+{% elif 'forum' in session == 3: %}
+    <h2>Thoughts from the other Juniors.</h2>
+{% elif 'forum' in session == 4: %}
+    <h2>Thoughts from the other Seniors.</h2>
+{% else: %}
+    <h2>How are you here?</h2>
+{% endif %}
+<p>
+
+
+
+{% if msg == "none" :%}
+    <p> No thoughts yet</p>
+{% else: %}
+{% set text = msg.split('\n\n') %}
+
+    {% for post in text: %}
+       <p>{{post}}</p>
+    {% endfor %}
+
+  {% endif %}
+</p>
+
+</rightside>
+
+{% endif %}
+{% endblock %}

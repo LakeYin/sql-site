@@ -1,0 +1,19 @@
+{% extends "master.html" %}
+
+{% block body %}
+
+<h2>Class Survey</h2>
+<p>
+<form action="{{ url_for('survey') }}" method=post>
+  <fieldset>
+    <h3>What grade are you in?: </h3>
+    <p><input type="radio" name="grade" value="freshman">Freshman<br></p>
+    <p><input type="radio" name="grade" value="sophomore">Sophomore<br></p>
+    <p><input type="radio" name="grade" value="junior">Junior<br></p>
+    <p><input type="radio" name="grade" value="senior">Senior<br></p>
+    <br>
+ <button type="submit">Submit</button>
+ </fieldset>
+</form>
+</p>
+{% endblock %}

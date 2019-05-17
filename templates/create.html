@@ -1,0 +1,16 @@
+{% extends "master.html" %}
+
+{% block body %}
+
+<h2>Create Account</h2>
+<p>
+<form action="{{ url_for('create') }}" method=post>
+  <fieldset>
+    <p><label class="field" for="Username">Username:</label><input type="text" name="username"><br></p>
+    <p><label class="field" for="Age">Password:</label><input type="password" name="password"><br></p>
+  <br>
+ <button type="submit">Submit</button>
+ </fieldset>
+</form>
+</p>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "master.html" %}
+
+{% block body %}
+
+<h2>Log in:</h2>
+<p>
+<form action="{{ url_for('index') }}" method=post>
+  username:
+  <input type="text" name="username"><br><br>
+  password:
+  <input type="password" name="password"><br><br>
+
+ <button type="submit">Submit</button>
+</form>
+</p>
+<p><a href="{{ url_for('create') }}">create account</a></p>
+{% endblock %}
