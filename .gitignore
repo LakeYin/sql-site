@@ -1,0 +1,3 @@
+#Ensures that the database file will remain empty in the remote repository
+
+*.db
